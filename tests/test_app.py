@@ -1,14 +1,31 @@
 from http import HTTPStatus
 
-from fastapi.testclient import TestClient
 
-from reserva.app import app
+def test_create_room(client):
+    room = {
+        'name': 'Sala A',
+        'capacity': 10,
+        'location': 'Andar 1',
+    }
+
+    response = client.post('/rooms/', json=room)
+    room['id'] = response.json()['id']
+
+    assert response.status_code == HTTPStatus.CREATED
+    assert response.json() == room
 
 
-def test_root_deve_retornar_ok_e_ola_mundo():
-    client = TestClient(app)
-
-    response = client.get('/')
+def test_list_rooms(client):
+    response = client.get('/rooms/')
 
     assert response.status_code == HTTPStatus.OK
-    assert response.json() == {'message': 'Olá Mundo!'}
+    assert response.json() == {
+        'rooms': [
+            {
+                'name': 'Sala A',
+                'capacity': 10,
+                'location': 'Andar 1',
+                'id': 1,
+            }
+        ]
+    }
