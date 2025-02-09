@@ -1,4 +1,4 @@
-"""create users table
+"""create rooms table
 
 Revision ID: 87cf382760ea
 Revises: 

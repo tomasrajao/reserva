@@ -7,6 +7,7 @@ from sqlalchemy.pool import StaticPool
 from reserva.app import app
 from reserva.database import get_session
 from reserva.models import Room, User, table_registry
+from reserva.security import get_password_hash
 
 
 @pytest.fixture
@@ -49,10 +50,27 @@ def room(session):
 
 @pytest.fixture
 def user(session):
-    user = User(user_name='João Silva', email='joao_silva@email.com', password='secret')
+    password = 'secret'
+    user = User(
+        user_name='João Silva',
+        email='joao_silva@email.com',
+        password=get_password_hash(password),
+    )
 
     session.add(user)
     session.commit()
     session.refresh(user)
 
+    user.clean_password = password
+
     return user
+
+
+@pytest.fixture
+def token(client, user):
+    response = client.post(
+        '/token',
+        data={'username': user.email, 'password': user.clean_password},
+    )
+
+    return response.json()['access_token']
