@@ -6,7 +6,7 @@ from sqlalchemy.pool import StaticPool
 
 from reserva.app import app
 from reserva.database import get_session
-from reserva.models import Room, table_registry
+from reserva.models import Room, User, table_registry
 
 
 @pytest.fixture
@@ -39,8 +39,20 @@ def session():
 @pytest.fixture
 def room(session):
     room = Room(name='Sala A', capacity=10, location='Andar 1')
+
     session.add(room)
     session.commit()
     session.refresh(room)
 
     return room
+
+
+@pytest.fixture
+def user(session):
+    user = User(user_name='João Silva', email='joao_silva@email.com', password='secret')
+
+    session.add(user)
+    session.commit()
+    session.refresh(user)
+
+    return user
