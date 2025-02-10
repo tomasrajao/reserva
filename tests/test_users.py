@@ -34,9 +34,7 @@ def test_create_existing_user(client, user):
     )
 
     assert response.status_code == HTTPStatus.BAD_REQUEST
-    assert response.json() == {
-        'detail': "User 'joao_silva@email.com' already exists."
-    }
+    assert response.json() == {'detail': "User 'joao_silva@email.com' already exists."}
 
 
 def test_list_users(client):
@@ -99,9 +97,6 @@ def test_update_user_integrity_error(client, user, token):
 
 
 def test_delete_user(client, user, token):
-    response = client.delete(
-        f'/users/{user.id}', headers={'Authorization': f'Bearer {token}'}
-    )
+    response = client.delete(f'/users/{user.id}', headers={'Authorization': f'Bearer {token}'})
 
-    assert response.status_code == HTTPStatus.OK
-    assert response.json() == {'message': 'User deleted.'}
+    assert response.status_code == HTTPStatus.NO_CONTENT

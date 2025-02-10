@@ -1,3 +1,5 @@
+from datetime import datetime, timedelta
+
 import pytest
 from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
@@ -6,7 +8,7 @@ from sqlalchemy.pool import StaticPool
 
 from reserva.app import app
 from reserva.database import get_session
-from reserva.models import Room, User, table_registry
+from reserva.models import Reservation, Room, User, table_registry
 from reserva.security import get_password_hash
 
 
@@ -74,3 +76,19 @@ def token(client, user):
     )
 
     return response.json()['access_token']
+
+
+@pytest.fixture
+def reservation(session, user):
+    reservation = Reservation(
+        room_id=1,
+        start_time=datetime.now(),
+        end_time=datetime.now() + timedelta(hours=1),
+        user_id=user.id,
+    )
+
+    session.add(reservation)
+    session.commit()
+    session.refresh(reservation)
+
+    return reservation

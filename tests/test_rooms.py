@@ -1,6 +1,7 @@
+from datetime import datetime, timedelta
 from http import HTTPStatus
 
-from reserva.schemas import RoomDB
+from reserva.schemas import RoomPublic
 
 
 def test_create_room(client):
@@ -23,7 +24,7 @@ def test_create_room(client):
 
 
 def test_create_existing_room(client, room):
-    RoomDB.model_validate(room).model_dump()
+    RoomPublic.model_validate(room).model_dump()
 
     response = client.post(
         '/rooms/',
@@ -48,9 +49,24 @@ def test_list_rooms(client):
 
 
 def test_list_rooms_with_rooms(client, room):
-    room_schema = RoomDB.model_validate(room).model_dump()
+    room_schema = RoomPublic.model_validate(room).model_dump()
 
     response = client.get('/rooms/')
 
     assert response.status_code == HTTPStatus.OK
     assert response.json() == {'rooms': [room_schema]}
+
+
+def test_room_is_available(client, room, reservation):
+    params = {
+        'start_time': datetime.now() + timedelta(hours=4),
+        'end_time': datetime.now() + timedelta(hours=6),
+    }
+    response = client.get(f'/rooms/{room.id}/availability', params=params)
+    assert response.json() == {
+        'message': f'{room.name} is available from {params["start_time"]} to {params["end_time"]}'
+    }
+
+
+def test_room_is_not_available(client, room, reservation):
+    pass
