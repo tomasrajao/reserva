@@ -19,7 +19,7 @@ CurrentUser = Annotated[User, Depends(get_current_user)]
 @router.post('/', status_code=HTTPStatus.CREATED, response_model=ReservationPublic)
 def reserve_room(reservation: ReservationSchema, session: Session, current_user: CurrentUser):
     if reservation.start_time >= reservation.end_time:
-        raise HTTPException(status_code=HTTPStatus.BAD_REQUEST, detail='Start time must be less than end time.')
+        raise HTTPException(status_code=HTTPStatus.BAD_REQUEST, detail='Start time must be greater than end time.')
 
     room = session.scalar(select(Room).where(Room.id == reservation.room_id))
 

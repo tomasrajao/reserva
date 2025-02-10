@@ -32,7 +32,7 @@ def test_start_time_less_than_end_time(client, room, token):
         },
     )
     assert response.status_code == HTTPStatus.BAD_REQUEST
-    assert response.json() == {'detail': 'Start time must be less than end time.'}
+    assert response.json() == {'detail': 'Start time must be greater than end time.'}
 
 
 def test_room_does_not_exist(client, room, token):
