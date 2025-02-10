@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import date, datetime
 
 from pydantic import BaseModel, ConfigDict, EmailStr
 
@@ -16,6 +16,10 @@ class RoomPublic(RoomSchema):
 
 class RoomList(BaseModel):
     rooms: list[RoomPublic]
+
+
+class Username(BaseModel):
+    user_name: str
 
 
 class UserPublic(BaseModel):
@@ -43,10 +47,13 @@ class ReservationSchema(BaseModel):
     start_time: datetime
     end_time: datetime
     room_id: int
+    model_config = ConfigDict(from_attributes=True)
 
 
 class ReservationPublic(ReservationSchema):
     id: int
+    room: RoomSchema
+    user: Username
 
 
 class ReservationList(BaseModel):
@@ -70,3 +77,9 @@ class FilterPage(BaseModel):
 class FilterPeriod(BaseModel):
     start_time: datetime
     end_time: datetime
+
+
+class FilterDate(BaseModel):
+    offset: int = 0
+    limit: int = 100
+    date: date | None

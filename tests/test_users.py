@@ -22,8 +22,6 @@ def test_create_user(client):
 
 
 def test_create_existing_user(client, user):
-    UserPublic.model_validate(user).model_dump()
-
     response = client.post(
         '/users/',
         json={
@@ -73,7 +71,7 @@ def test_update_user(client, user, token):
 
 
 def test_update_user_integrity_error(client, user, token):
-    response = client.post(
+    client.post(
         '/users/',
         headers={'Authorization': f'Bearer {token}'},
         json={

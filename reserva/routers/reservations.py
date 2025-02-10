@@ -19,7 +19,7 @@ CurrentUser = Annotated[User, Depends(get_current_user)]
 @router.post('/', status_code=HTTPStatus.CREATED, response_model=ReservationPublic)
 def reserve_room(reservation: ReservationSchema, session: Session, current_user: CurrentUser):
     if reservation.start_time >= reservation.end_time:
-        raise HTTPException(status_code=HTTPStatus.BAD_REQUEST, detail='Start time must be greater than end time.')
+        raise HTTPException(status_code=HTTPStatus.BAD_REQUEST, detail='Start time must be lesser than end time.')
 
     room = session.scalar(select(Room).where(Room.id == reservation.room_id))
 
@@ -59,6 +59,21 @@ def reserve_room(reservation: ReservationSchema, session: Session, current_user:
     return db_reservation
 
 
-@router.post('/room_id')
-def cancel_reservation():
-    pass
+@router.delete('/{reservation_id}', status_code=HTTPStatus.NO_CONTENT)
+def cancel_reservation(reservation_id: int, session: Session, current_user: CurrentUser):
+    reservation = session.scalar(select(Reservation).where(Reservation.id == reservation_id))
+
+    if not reservation:
+        raise HTTPException(
+            status_code=HTTPStatus.NOT_FOUND,
+            detail='Reservation not found.',
+        )
+
+    if current_user.id != reservation.user_id:
+        raise HTTPException(
+            status_code=HTTPStatus.FORBIDDEN,
+            detail='Not enough permissions.',
+        )
+
+    session.delete(reservation)
+    session.commit()
