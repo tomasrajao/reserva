@@ -139,7 +139,7 @@ Exemplo:
 ##
 #### Consultar disponibilidade das salas (GET /rooms/{id}/availability)
 - Params
-- 
+
 ```json
 {
     "start_time": "2025-02-10T10:00:00",
@@ -209,31 +209,32 @@ Informar ID correspondente à sala na URL
  {
   "reservations": [
     {
-      "start_time": "2025-02-13T12:00:00:000000",
-      "end_time": "2025-02-13T13:00:00:000000",
-      "room_id": 1,
-      "id": 1,
-      "room": {
-        "name": "Sala A",
-        "capacity": 10,
-        "location": "Andar 1"
-      },
-      "user": {
+        "start_time": "2025-02-13T12:00:00:000000",
+        "end_time": "2025-02-13T13:00:00:000000",
+        "room_id": 1,
+        "id": 1,
+        "room": {
+            "name": "Sala A",
+            "capacity": 10,
+            "location": "Andar 1"
+        },
+        "user": {
         "user_name": "João"
-      }
+        }
     },
     {
-      "start_time": "2025-02-13T16:00:00:000000",
-      "end_time": "2025-02-13T18:00:00:000000",
-      "room_id": 1,
-      "id": 2,
-      "room": {
-        "name": "Sala A",
-        "capacity": 10,
-        "location": "Andar 1"
-      },
-      "user": {
+        "start_time": "2025-02-13T16:00:00:000000",
+        "end_time": "2025-02-13T18:00:00:000000",
+        "room_id": 1,
+        "id": 2,
+        "room": {
+            "name": "Sala A",
+            "capacity": 10,
+            "location": "Andar 1"
+        },
+        "user": {
         "user_name": "João"
-      }
-    },
+        }
+    }
+  ]
  ```
