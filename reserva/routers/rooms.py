@@ -74,12 +74,12 @@ def get_room_availability(room_id: int, session: Session, filter_rooms: Annotate
     query = query.filter(
         or_(
             and_(
-                Reservation.start_time < filter_rooms.start_time,
-                filter_rooms.start_time < Reservation.end_time,
+                Reservation.start_time <= filter_rooms.start_time,
+                filter_rooms.start_time <= Reservation.end_time,
             ),
             and_(
-                Reservation.start_time < filter_rooms.end_time,
-                filter_rooms.end_time < Reservation.end_time,
+                Reservation.start_time <= filter_rooms.end_time,
+                filter_rooms.end_time <= Reservation.end_time,
             ),
         )
     )

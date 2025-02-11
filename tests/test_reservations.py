@@ -68,7 +68,7 @@ def test_conflicting_reservation(client, room, reservation, token):
         },
     )
     assert response.status_code == HTTPStatus.CONFLICT
-    assert response.json() == {'detail': 'The room is already reserved for this period'}
+    assert response.json() == {'detail': 'The room is already reserved for this period.'}
 
 
 def test_reservation_same_time_different_rooms(client, room, reservation, token):

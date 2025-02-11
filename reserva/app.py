@@ -6,7 +6,7 @@ from loguru import logger
 from reserva.routers import auth, reservations, rooms, users
 
 logger.remove()
-logger.add(sink='logs.txt')
+logger.add(sink='logfile.log')
 logger.add(sink=sys.stderr)
 
 app = FastAPI()

@@ -33,12 +33,12 @@ def reserve_room(reservation: ReservationSchema, session: Session, current_user:
     query = query.filter(
         or_(
             and_(
-                reservation.start_time < Reservation.start_time,
-                Reservation.start_time > reservation.end_time,
+                reservation.start_time <= Reservation.start_time,
+                Reservation.start_time >= reservation.end_time,
             ),
             and_(
-                reservation.start_time < Reservation.end_time,
-                Reservation.end_time > reservation.end_time,
+                reservation.start_time <= Reservation.end_time,
+                Reservation.end_time >= reservation.end_time,
             ),
         )
     )
@@ -46,7 +46,7 @@ def reserve_room(reservation: ReservationSchema, session: Session, current_user:
         logger.error('CONFLICT: reservation period conflicting.')
         raise HTTPException(
             status_code=HTTPStatus.CONFLICT,
-            detail='The room is already reserved for this period',
+            detail='The room is already reserved for this period.',
         )
 
     db_reservation = Reservation(
@@ -60,7 +60,7 @@ def reserve_room(reservation: ReservationSchema, session: Session, current_user:
     session.commit()
     session.refresh(db_reservation)
 
-    logger.info(f'CREATED: Reservation for {db_reservation.room.name} created successfuly')
+    logger.info(f'CREATED: Reservation for {db_reservation.room.name} created successfuly.')
     return db_reservation
 
 
