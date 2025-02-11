@@ -2,6 +2,8 @@ from datetime import date, datetime
 
 from pydantic import BaseModel, ConfigDict, EmailStr
 
+Date = date
+
 
 class RoomSchema(BaseModel):
     name: str
@@ -80,6 +82,6 @@ class FilterPeriod(BaseModel):
 
 
 class FilterDate(BaseModel):
+    date: Date | None = None
     offset: int = 0
     limit: int = 100
-    date: date | None

@@ -1,0 +1,127 @@
+2025-02-10 18:53:48.985 | INFO     | reserva.routers.reservations:reserve_room:63 - CREATED: Reservation for Sala A created successfuly
+2025-02-10 18:53:49.227 | ERROR    | reserva.routers.reservations:reserve_room:23 - BAD REQUEST: start_time greater than end_time.
+2025-02-10 18:53:49.467 | ERROR    | reserva.routers.reservations:reserve_room:29 - BAD REQUEST: Room does not exist.
+2025-02-10 18:53:49.692 | ERROR    | reserva.routers.reservations:reserve_room:46 - CONFLICT: reservation period conflicting.
+2025-02-10 18:53:49.929 | SUCCESS  | reserva.routers.rooms:create_room:55 - CREATED: Room 'Sala B' created.
+2025-02-10 18:53:49.954 | INFO     | reserva.routers.reservations:reserve_room:63 - CREATED: Reservation for Sala B created successfuly
+2025-02-10 18:53:50.170 | INFO     | reserva.routers.reservations:cancel_reservation:87 - OK: Reservation canceled.
+2025-02-10 18:53:50.287 | SUCCESS  | reserva.routers.rooms:create_room:55 - CREATED: Room 'Sala A' created.
+2025-02-10 18:53:50.315 | ERROR    | reserva.routers.rooms:create_room:42 - BAD REQUEST: Room 'Sala A' already exists.
+2025-02-10 18:53:50.480 | INFO     | reserva.routers.rooms:get_room_availability:94 - OK: Sala A is available from 2025-02-10 22:53:50.465355 to 2025-02-11 00:53:50.465367.
+2025-02-10 18:53:50.717 | ERROR    | reserva.routers.rooms:get_room_reservations:117 - NOT FOUND: No room reservations for this date.
+2025-02-10 18:53:50.934 | INFO     | reserva.routers.reservations:reserve_room:63 - CREATED: Reservation for Sala A created successfuly
+2025-02-10 18:53:51.092 | INFO     | reserva.routers.users:create_user:54 - CREATED: User created.
+2025-02-10 18:53:51.214 | ERROR    | reserva.routers.users:create_user:39 - BAD REQUEST: joao_silva@email.com already exists.
+2025-02-10 18:53:51.851 | SUCCESS  | reserva.routers.users:update_user:77 - OK: User infos updated.
+2025-02-10 18:53:52.506 | INFO     | reserva.routers.users:create_user:54 - CREATED: User created.
+2025-02-10 18:53:52.746 | ERROR    | reserva.routers.users:update_user:74 - CONFLICT: Email jose_souza@email.com already exists in the database.
+2025-02-10 18:53:53.488 | INFO     | reserva.routers.users:delete_user:90 - OK: User joao_silva@email.com deleted.
+2025-02-10 18:56:13.635 | INFO     | reserva.routers.reservations:reserve_room:63 - CREATED: Reservation for Sala A created successfuly
+2025-02-10 18:56:13.824 | ERROR    | reserva.routers.reservations:reserve_room:23 - BAD REQUEST: start_time greater than end_time.
+2025-02-10 18:56:14.012 | ERROR    | reserva.routers.reservations:reserve_room:29 - BAD REQUEST: Room does not exist.
+2025-02-10 18:56:14.215 | ERROR    | reserva.routers.reservations:reserve_room:46 - CONFLICT: reservation period conflicting.
+2025-02-10 18:56:14.399 | SUCCESS  | reserva.routers.rooms:create_room:55 - CREATED: Room 'Sala B' created.
+2025-02-10 18:56:14.415 | INFO     | reserva.routers.reservations:reserve_room:63 - CREATED: Reservation for Sala B created successfuly
+2025-02-10 18:56:14.600 | INFO     | reserva.routers.reservations:cancel_reservation:87 - OK: Reservation canceled.
+2025-02-10 18:56:14.729 | SUCCESS  | reserva.routers.rooms:create_room:55 - CREATED: Room 'Sala A' created.
+2025-02-10 18:56:14.756 | ERROR    | reserva.routers.rooms:create_room:42 - BAD REQUEST: Room 'Sala A' already exists.
+2025-02-10 18:56:14.908 | INFO     | reserva.routers.rooms:get_room_availability:94 - OK: Sala A is available from 2025-02-10 22:56:14.899634 to 2025-02-11 00:56:14.899645.
+2025-02-10 18:56:15.149 | ERROR    | reserva.routers.rooms:get_room_reservations:117 - NOT FOUND: No room reservations for this date.
+2025-02-10 18:56:15.356 | INFO     | reserva.routers.reservations:reserve_room:63 - CREATED: Reservation for Sala A created successfuly
+2025-02-10 18:56:15.521 | INFO     | reserva.routers.users:create_user:54 - CREATED: User created.
+2025-02-10 18:56:15.646 | ERROR    | reserva.routers.users:create_user:39 - BAD REQUEST: joao_silva@email.com already exists.
+2025-02-10 18:56:16.092 | SUCCESS  | reserva.routers.users:update_user:77 - OK: User infos updated.
+2025-02-10 18:56:16.395 | INFO     | reserva.routers.users:create_user:54 - CREATED: User created.
+2025-02-10 18:56:16.475 | ERROR    | reserva.routers.users:update_user:74 - CONFLICT: Email jose_souza@email.com already exists in the database.
+2025-02-10 18:56:16.682 | INFO     | reserva.routers.users:delete_user:90 - OK: User joao_silva@email.com deleted.
+2025-02-10 18:56:25.157 | INFO     | reserva.routers.reservations:reserve_room:63 - CREATED: Reservation for Sala A created successfuly
+2025-02-10 18:56:25.326 | ERROR    | reserva.routers.reservations:reserve_room:23 - BAD REQUEST: start_time greater than end_time.
+2025-02-10 18:56:25.512 | ERROR    | reserva.routers.reservations:reserve_room:29 - BAD REQUEST: Room does not exist.
+2025-02-10 18:56:25.722 | ERROR    | reserva.routers.reservations:reserve_room:46 - CONFLICT: reservation period conflicting.
+2025-02-10 18:56:25.922 | SUCCESS  | reserva.routers.rooms:create_room:55 - CREATED: Room 'Sala B' created.
+2025-02-10 18:56:25.935 | INFO     | reserva.routers.reservations:reserve_room:63 - CREATED: Reservation for Sala B created successfuly
+2025-02-10 18:56:26.141 | INFO     | reserva.routers.reservations:cancel_reservation:87 - OK: Reservation canceled.
+2025-02-10 18:56:26.276 | SUCCESS  | reserva.routers.rooms:create_room:55 - CREATED: Room 'Sala A' created.
+2025-02-10 18:56:26.305 | ERROR    | reserva.routers.rooms:create_room:42 - BAD REQUEST: Room 'Sala A' already exists.
+2025-02-10 18:56:26.469 | INFO     | reserva.routers.rooms:get_room_availability:94 - OK: Sala A is available from 2025-02-10 22:56:26.457271 to 2025-02-11 00:56:26.457282.
+2025-02-10 18:56:26.732 | ERROR    | reserva.routers.rooms:get_room_reservations:117 - NOT FOUND: No room reservations for this date.
+2025-02-10 18:56:26.937 | INFO     | reserva.routers.reservations:reserve_room:63 - CREATED: Reservation for Sala A created successfuly
+2025-02-10 18:56:27.107 | INFO     | reserva.routers.users:create_user:54 - CREATED: User created.
+2025-02-10 18:56:27.232 | ERROR    | reserva.routers.users:create_user:39 - BAD REQUEST: joao_silva@email.com already exists.
+2025-02-10 18:56:27.679 | SUCCESS  | reserva.routers.users:update_user:77 - OK: User infos updated.
+2025-02-10 18:56:28.231 | INFO     | reserva.routers.users:create_user:54 - CREATED: User created.
+2025-02-10 18:56:28.433 | ERROR    | reserva.routers.users:update_user:74 - CONFLICT: Email jose_souza@email.com already exists in the database.
+2025-02-10 18:56:28.984 | INFO     | reserva.routers.users:delete_user:90 - OK: User joao_silva@email.com deleted.
+2025-02-10 18:57:38.816 | INFO     | reserva.routers.reservations:reserve_room:63 - CREATED: Reservation for string created successfuly
+2025-02-10 19:00:18.611 | INFO     | reserva.routers.reservations:reserve_room:63 - CREATED: Reservation for Sala A created successfuly
+2025-02-10 19:00:18.836 | ERROR    | reserva.routers.reservations:reserve_room:23 - BAD REQUEST: start_time greater than end_time.
+2025-02-10 19:00:19.048 | ERROR    | reserva.routers.reservations:reserve_room:29 - BAD REQUEST: Room does not exist.
+2025-02-10 19:00:19.256 | ERROR    | reserva.routers.reservations:reserve_room:46 - CONFLICT: reservation period conflicting.
+2025-02-10 19:00:19.461 | SUCCESS  | reserva.routers.rooms:create_room:55 - CREATED: Room 'Sala B' created.
+2025-02-10 19:00:19.480 | INFO     | reserva.routers.reservations:reserve_room:63 - CREATED: Reservation for Sala B created successfuly
+2025-02-10 19:00:19.714 | INFO     | reserva.routers.reservations:cancel_reservation:87 - OK: Reservation canceled.
+2025-02-10 19:00:19.855 | SUCCESS  | reserva.routers.rooms:create_room:55 - CREATED: Room 'Sala A' created.
+2025-02-10 19:00:19.892 | ERROR    | reserva.routers.rooms:create_room:42 - BAD REQUEST: Room 'Sala A' already exists.
+2025-02-10 19:00:20.079 | INFO     | reserva.routers.rooms:get_room_availability:94 - OK: Sala A is available from 2025-02-10 23:00:20.068824 to 2025-02-11 01:00:20.068836.
+2025-02-10 19:00:20.330 | ERROR    | reserva.routers.rooms:get_room_reservations:117 - NOT FOUND: No room reservations for this date.
+2025-02-10 19:00:20.553 | INFO     | reserva.routers.reservations:reserve_room:63 - CREATED: Reservation for Sala A created successfuly
+2025-02-10 19:00:20.715 | INFO     | reserva.routers.users:create_user:54 - CREATED: User created.
+2025-02-10 19:00:20.850 | ERROR    | reserva.routers.users:create_user:39 - BAD REQUEST: joao_silva@email.com already exists.
+2025-02-10 19:00:21.329 | SUCCESS  | reserva.routers.users:update_user:77 - OK: User infos updated.
+2025-02-10 19:00:21.740 | INFO     | reserva.routers.users:create_user:54 - CREATED: User created.
+2025-02-10 19:00:21.900 | ERROR    | reserva.routers.users:update_user:74 - CONFLICT: Email jose_souza@email.com already exists in the database.
+2025-02-10 19:00:22.286 | INFO     | reserva.routers.users:delete_user:90 - OK: User joao_silva@email.com deleted.
+2025-02-10 19:50:55.337 | INFO     | reserva.routers.reservations:reserve_room:63 - CREATED: Reservation for Sala A created successfuly
+2025-02-10 19:50:55.487 | ERROR    | reserva.routers.reservations:reserve_room:23 - BAD REQUEST: start_time greater than end_time.
+2025-02-10 19:50:55.652 | ERROR    | reserva.routers.reservations:reserve_room:29 - BAD REQUEST: Room does not exist.
+2025-02-10 19:50:55.851 | ERROR    | reserva.routers.reservations:reserve_room:46 - CONFLICT: reservation period conflicting.
+2025-02-10 19:50:56.015 | SUCCESS  | reserva.routers.rooms:create_room:55 - CREATED: Room 'Sala B' created.
+2025-02-10 19:50:56.026 | INFO     | reserva.routers.reservations:reserve_room:63 - CREATED: Reservation for Sala B created successfuly
+2025-02-10 19:50:56.211 | INFO     | reserva.routers.reservations:cancel_reservation:87 - OK: Reservation canceled.
+2025-02-10 19:50:56.324 | SUCCESS  | reserva.routers.rooms:create_room:55 - CREATED: Room 'Sala A' created.
+2025-02-10 19:50:56.346 | ERROR    | reserva.routers.rooms:create_room:42 - BAD REQUEST: Room 'Sala A' already exists.
+2025-02-10 19:50:56.474 | INFO     | reserva.routers.rooms:get_room_availability:94 - OK: Sala A is available from 2025-02-10 23:50:56.466517 to 2025-02-11 01:50:56.466522.
+2025-02-10 19:50:56.731 | ERROR    | reserva.routers.rooms:get_room_reservations:117 - NOT FOUND: No room reservations for this date.
+2025-02-10 19:50:56.912 | INFO     | reserva.routers.reservations:reserve_room:63 - CREATED: Reservation for Sala A created successfuly
+2025-02-10 19:50:57.021 | INFO     | reserva.routers.users:create_user:54 - CREATED: User created.
+2025-02-10 19:50:57.105 | ERROR    | reserva.routers.users:create_user:39 - BAD REQUEST: joao_silva@email.com already exists.
+2025-02-10 19:50:57.424 | SUCCESS  | reserva.routers.users:update_user:77 - OK: User infos updated.
+2025-02-10 19:50:57.647 | INFO     | reserva.routers.users:create_user:54 - CREATED: User created.
+2025-02-10 19:50:57.724 | ERROR    | reserva.routers.users:update_user:74 - CONFLICT: Email jose_souza@email.com already exists in the database.
+2025-02-10 19:50:57.897 | INFO     | reserva.routers.users:delete_user:90 - OK: User joao_silva@email.com deleted.
+2025-02-10 21:15:47.580 | INFO     | reserva.routers.reservations:reserve_room:63 - CREATED: Reservation for Sala A created successfuly
+2025-02-10 21:15:49.861 | ERROR    | reserva.routers.reservations:reserve_room:23 - BAD REQUEST: start_time greater than end_time.
+2025-02-10 21:15:53.751 | ERROR    | reserva.routers.reservations:reserve_room:29 - BAD REQUEST: Room does not exist.
+2025-02-10 21:15:57.203 | ERROR    | reserva.routers.reservations:reserve_room:46 - CONFLICT: reservation period conflicting.
+2025-02-10 21:16:03.463 | SUCCESS  | reserva.routers.rooms:create_room:55 - CREATED: Room 'Sala B' created.
+2025-02-10 21:16:03.501 | INFO     | reserva.routers.reservations:reserve_room:63 - CREATED: Reservation for Sala B created successfuly
+2025-02-10 21:16:10.314 | INFO     | reserva.routers.reservations:cancel_reservation:87 - OK: Reservation canceled.
+2025-02-10 21:16:22.284 | SUCCESS  | reserva.routers.rooms:create_room:55 - CREATED: Room 'Sala A' created.
+2025-02-10 21:16:28.356 | ERROR    | reserva.routers.rooms:create_room:42 - BAD REQUEST: Room 'Sala A' already exists.
+2025-02-10 21:16:44.893 | INFO     | reserva.routers.rooms:get_room_availability:94 - OK: Sala A is available from 2025-02-11 01:16:44.863519 to 2025-02-11 03:16:44.863540.
+2025-02-10 21:16:55.169 | ERROR    | reserva.routers.rooms:get_room_reservations:117 - NOT FOUND: No room reservations for this date.
+2025-02-10 21:16:59.935 | INFO     | reserva.routers.reservations:reserve_room:63 - CREATED: Reservation for Sala A created successfuly
+2025-02-10 21:17:08.454 | INFO     | reserva.routers.users:create_user:54 - CREATED: User created.
+2025-02-10 21:17:14.451 | ERROR    | reserva.routers.users:create_user:39 - BAD REQUEST: joao_silva@email.com already exists.
+2025-02-10 21:17:29.117 | SUCCESS  | reserva.routers.users:update_user:77 - OK: User infos updated.
+2025-02-10 21:17:32.805 | INFO     | reserva.routers.users:create_user:54 - CREATED: User created.
+2025-02-10 21:17:32.935 | ERROR    | reserva.routers.users:update_user:74 - CONFLICT: Email jose_souza@email.com already exists in the database.
+2025-02-10 21:17:36.493 | INFO     | reserva.routers.users:delete_user:90 - OK: User joao_silva@email.com deleted.
+2025-02-10 21:17:57.861 | INFO     | reserva.routers.reservations:reserve_room:63 - CREATED: Reservation for Sala A created successfuly
+2025-02-10 21:17:58.247 | ERROR    | reserva.routers.reservations:reserve_room:23 - BAD REQUEST: start_time greater than end_time.
+2025-02-10 21:17:58.636 | ERROR    | reserva.routers.reservations:reserve_room:29 - BAD REQUEST: Room does not exist.
+2025-02-10 21:17:59.053 | ERROR    | reserva.routers.reservations:reserve_room:46 - CONFLICT: reservation period conflicting.
+2025-02-10 21:17:59.557 | SUCCESS  | reserva.routers.rooms:create_room:55 - CREATED: Room 'Sala B' created.
+2025-02-10 21:17:59.587 | INFO     | reserva.routers.reservations:reserve_room:63 - CREATED: Reservation for Sala B created successfuly
+2025-02-10 21:18:00.058 | INFO     | reserva.routers.reservations:cancel_reservation:87 - OK: Reservation canceled.
+2025-02-10 21:18:00.388 | SUCCESS  | reserva.routers.rooms:create_room:55 - CREATED: Room 'Sala A' created.
+2025-02-10 21:18:00.491 | ERROR    | reserva.routers.rooms:create_room:42 - BAD REQUEST: Room 'Sala A' already exists.
+2025-02-10 21:18:01.118 | INFO     | reserva.routers.rooms:get_room_availability:94 - OK: Sala A is available from 2025-02-11 01:18:01.087513 to 2025-02-11 03:18:01.087529.
+2025-02-10 21:18:02.083 | ERROR    | reserva.routers.rooms:get_room_reservations:117 - NOT FOUND: No room reservations for this date.
+2025-02-10 21:18:02.665 | INFO     | reserva.routers.reservations:reserve_room:63 - CREATED: Reservation for Sala A created successfuly
+2025-02-10 21:18:03.164 | INFO     | reserva.routers.users:create_user:54 - CREATED: User created.
+2025-02-10 21:18:03.456 | ERROR    | reserva.routers.users:create_user:39 - BAD REQUEST: joao_silva@email.com already exists.
+2025-02-10 21:18:04.505 | SUCCESS  | reserva.routers.users:update_user:77 - OK: User infos updated.
+2025-02-10 21:18:05.162 | INFO     | reserva.routers.users:create_user:54 - CREATED: User created.
+2025-02-10 21:18:05.330 | ERROR    | reserva.routers.users:update_user:74 - CONFLICT: Email jose_souza@email.com already exists in the database.
+2025-02-10 21:18:05.751 | INFO     | reserva.routers.users:delete_user:90 - OK: User joao_silva@email.com deleted.

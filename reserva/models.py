@@ -39,6 +39,7 @@ class Reservation:
     id: Mapped[int] = mapped_column(init=False, primary_key=True)
     start_time: Mapped[datetime]
     end_time: Mapped[datetime]
+
     user_id: Mapped[int] = mapped_column(ForeignKey('users.id'))
     user: Mapped[User] = relationship(init=False, back_populates='reservations')
 

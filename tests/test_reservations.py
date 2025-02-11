@@ -118,9 +118,9 @@ def test_cancel_reservation(client, room, reservation, token):
     assert response.status_code == HTTPStatus.NO_CONTENT
 
 
-def test_cancel_reservation_without_login(client, room, reservation, token):
+def test_cancel_reservation_without_login(client, room, reservation):
     response = client.delete(
         f'/reservations/{reservation.id}',
-        headers={'Authorization': f'Bearer {token}'},
+        headers={'Authorization': 'Bearer invalid-token'},
     )
-    assert response.status_code == HTTPStatus.NO_CONTENT
+    assert response.status_code == HTTPStatus.UNAUTHORIZED

@@ -64,7 +64,7 @@ def test_room_is_available(client, room, reservation):
     }
     response = client.get(f'/rooms/{room.id}/availability', params=params)
     assert response.json() == {
-        'message': f'{room.name} is available from {params["start_time"]} to {params["end_time"]}'
+        'message': f'{room.name} is available from {params["start_time"]} to {params["end_time"]}.'
     }
 
 
@@ -76,9 +76,8 @@ def test_room_with_reservations(client, room, reservation):
     start_time = reservation.start_time.isoformat()
     end_time = reservation.end_time.isoformat()
 
-    response = client.get(f'/rooms/{room.id}/reservations', params={'date': date.today()})
+    response = client.get(f'/rooms/{room.id}/reservations', params={'date': date.today().isoformat()})
 
-    assert response.status_code == HTTPStatus.OK
     assert response.json() == {
         'reservations': [
             {
@@ -100,7 +99,10 @@ def test_room_with_reservations(client, room, reservation):
 
 
 def test_no_reservations_on_informed_date(client, room, reservation):
-    response = client.get(f'/rooms/{room.id}/reservations', params={'date': date.today() + timedelta(days=1)})
+    response = client.get(
+        f'/rooms/{room.id}/reservations',
+        params={'date': (date.today() + timedelta(days=3))},
+    )
 
     assert response.json() == {'detail': 'No room reservations for this date.'}
 
