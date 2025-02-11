@@ -87,7 +87,8 @@ Exemplo:
   "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXN0ZUB0ZXN0LmNvbSIsImV4cCI6MTY5MDI1ODE1M30.Nx0P_ornVwJBH_LLLVrlJoh6RmJeQr7YJmlGY04",
   "token_type": "bearer"
 }
-##```
+```
+##
 #### Cadastrar sala de reunião (POST /rooms)
 Exemplo:
 - Body
@@ -108,9 +109,15 @@ Exemplo:
 }
 ```
 ##
-#### Listar salas de reunião (GET /rooms?offset=0&limit=100)
-- Exemplo de retorno (200):
-
+#### Listar salas de reunião (GET /rooms)
+- Params (opcional)
+```json
+{
+  "offset": 0,
+  "limit": 100
+}
+```
+- Retorno (200)
 ```json
 {
   "rooms": [
@@ -130,12 +137,19 @@ Exemplo:
 }
 ```
 ##
-#### Consultar disponibilidade das salas (GET /rooms/{id}/availability?start_time=2025-02-10T10:00:00&end_time=2025-02-10T12:00:00)
-- Exemplo de retorno (200):
-
+#### Consultar disponibilidade das salas (GET /rooms/{id}/availability)
+- Params
+- 
 ```json
 {
-  "message": "Sala A is available from 2025-02-10 10:00:00 to 2025-02-10 12:00:00."
+    "start_time": "2025-02-10T10:00:00",
+    "end_time": "2025-02-10T12:00:00"
+}
+```
+- Exemplo de retorno (200)
+```json
+{
+    "message": "Sala A is available from 2025-02-10 10:00:00 to 2025-02-10 12:00:00."
 }
 ```
 ##
